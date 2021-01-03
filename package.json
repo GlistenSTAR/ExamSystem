@@ -1,36 +1,45 @@
 {
-  "name": "client",
-  "version": "0.1.0",
-  "private": true,
+  "name": "devconnector",
+  "version": "1.0.0",
+  "description": "Social network for developers",
+  "main": "server.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "db": "start mongod --dbpath 'D:/ExamSystem/ExamSystemDatabase'",
+    "dev": "concurrently -n Server,Client,DB \"npm run server\" \"npm run client\" \"npm run db\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "Brad Traversy",
+  "license": "MIT",
   "dependencies": {
-    "await": "^0.2.6",
-    "axios": "^0.18.0",
-    "classnames": "^2.2.5",
-    "jwt-decode": "^2.2.0",
-    "moment": "^2.22.0",
-    "react": "16.3.1",
-    "react-dom": "16.3.1",
+    "@reach/router": "^1.3.4",
+    "@testing-library/jest-dom": "^5.11.8",
+    "@testing-library/react": "^11.2.2",
+    "@wmik/use-media-recorder": "^1.0.0-alpha.4",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "concurrently": "^3.5.1",
+    "express": "^4.16.3",
+    "gravatar": "^1.6.0",
+    "jshint": "^2.12.0",
+    "jsonwebtoken": "^8.2.0",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.0.12",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
     "react-media-recorder": "^1.4.0",
-    "react-modal": "^3.12.1",
-    "react-moment": "^0.7.0",
-    "react-multimedia-capture": "^1.2.4",
-    "react-redux": "^5.0.7",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4",
-    "redux": "3.7.2",
-    "redux-thunk": "2.2.0",
-    "@reach/router": "1.3.3",
-    "@testing-library/jest-dom": "5.7.0",
-    "@testing-library/react": "10.0.4"
+    "react-video-recorder": "^3.17.1",
+    "reactstrap": "^8.8.1",
+    "record-screen": "^3.18.0",
+    "typescript": "^4.1.3",
+    "use-screen-recording": "^2.0.0",
+    "validator": "^9.4.1",
+    "videojs-record": "^3.9.0"
   },
   "devDependencies": {
-    "typescript": "3.8.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "proxy": "http://localhost:5000"
+    "nodemon": "^1.17.3"
+  }
 }
