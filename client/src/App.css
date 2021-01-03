@@ -1,0 +1,161 @@
+img {
+  width: 100%;
+}
+
+.landing {
+  position: relative;
+  background: url('./img/showcase.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin-top: -90px;
+  margin-bottom: -50px;
+  z-index: 0;
+}
+.landing .col-md-12.text-center.mt-5 a{
+  z-index: 10!important;
+}
+
+.landing-inner {
+  padding-top: 80px;
+}
+
+.dark-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-form {
+  opacity: 0.9;
+}
+
+.latest-profiles-img {
+  width: 40px;
+  height: 40px;
+}
+
+.form-control::placeholder {
+  color: #bbb !important;
+}
+
+.bg-dark{
+  background-color: #5161ce!important;
+  opacity: 0.8;
+  z-index: 1;
+  color:rgba(255,255,255,0.5);
+}
+
+.navbar.bg-dark{  
+  border-bottom-left-radius:0.5cm ;
+  border-bottom-right-radius:0.5cm ;
+}
+
+footer.bg-dark{
+  position: relative;
+  border-top-left-radius:0.5cm ;
+  border-top-right-radius:0.5cm ;
+  margin-top: -55px!important;
+}
+
+.invalid-feedback{
+  text-align: center;
+}
+
+.navbar-brand{
+  font-size: 26px;
+}
+
+.navbar-brand img{
+  width: 100px!important;
+  height: 50px!important;
+}
+.navbar-brand span{
+  color:pink
+}
+
+.checkgroup span{
+  color:grey;
+}
+
+.question form .col-md-8 input{
+  /* margin-left: -15px!important; */
+  text-align: center;
+  width: 120%;
+  cursor: not-allowed;
+}
+
+.examcontent{
+  padding-top:30px;
+}
+
+.examcontent .question{
+  font-size: 22px;
+  margin-left:30px;
+}
+
+.examcontent .text-primary{
+  font-size: 24px;
+}
+
+.examcontent .form-check-inline{
+  margin-left:20px;
+  padding-left: 50px;
+}
+
+.examcontent .form-check-label{
+  font-size: 24px;
+}
+
+.dashboard .list-group{
+  height: 400px;
+  font-size: 20px;
+}
+.dashboard .list-group a:hover{
+  color:#5161ce;
+}
+.dashboard table{
+  background-color:rgb(250, 243, 243);
+}
+.dashboard table td{
+  text-align: center;
+  vertical-align: middle!important;
+}
+.dashboard table td img{
+  width:150px!important;
+  height: 150px!important;
+}
+
+.ReactModal__Content{
+  background-color: bisque!important;
+  inset: 160px!important;
+  font-size: 24px;
+  z-index: 999999999999!important;
+}
+
+.ReactModal__Content button{
+  float:right!important;
+  border:none!important;
+  background-color: transparent!important;
+}
+
+.ReactModal__Content .col-md-4 label{
+  font-style: bold!important;
+  font-size: 26px;
+}
+
+.ttt{
+  margin-left: 50px;
+  padding-top:30px;
+}
+
+.ttt label{
+  color:blue;
+}
+
+.newexam{
+  margin-top:-50px;
+}

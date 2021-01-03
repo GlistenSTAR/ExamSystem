@@ -1,0 +1,14 @@
+export const GET_ERRORS = 'GET_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const SET_CURRENT_USER = 'SET_CURRENT_USER';
+export const GET_PROBLEMS = 'GET_PROBLEMS';
+export const GET_ALL_PROBLEMS = 'GET_ALL_PROBLEMS';
+export const GET_TEACHERS = 'GET_TEACHERS';
+export const POST_LOADING = 'POST_LOADING';
+export const GET_STUDENTS = 'GET_STUDENTS';
+export const SET_CURRENT_ADMIN = 'SET_CURRENT_ADMIN';
+export const CANCEL_ABLETST = 'CANCEL_ABLETST';
+export const GET_EXAMINAIONS = 'GET_EXAMINAIONS';
+export const SET_ABLETST = 'SET_ABLETST';
+export const GET_ALL_RESULTS = 'GET_ALL_RESULTS';
+export const GET_ALL_EXAMS = 'GET_ALL_EXAMS';
