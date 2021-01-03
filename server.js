@@ -7,6 +7,7 @@ const path = require('path');
 const users = require('./routes/api/users');
 const answer = require('./routes/api/answer');
 const problem = require('./routes/api/problem');
+const admin = require('./routes/api/admin');
 
 const app = express();
 
@@ -33,6 +34,7 @@ require('./config/passport')(passport);
 app.use('/api/users', users);
 app.use('/api/answer', answer);
 app.use('/api/problem', problem);
+app.use('/api/admin', admin);
 
 // Server static assets if in production
 if (process.env.NODE_ENV === 'production') {

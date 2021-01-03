@@ -7,8 +7,8 @@ const ExamResultSchema = new Schema({
     type: String,
     required:true
   },
-  problem:{
-    type:Object,
+  examid:{
+    type: String,
     required: true
   },
   result:{

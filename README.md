@@ -1,7 +1,6 @@
-# ExamSystem
+# DevConnector
 
-This project make for exam for school.
-That test system is muliple choice
+> Small social network app built with the MERN stack. This is part of my "MERN Stack Front To Back" Udemy course
 
 ## Quick Start
 
@@ -24,6 +23,12 @@ npm run client
 # Server runs on http://localhost:5000 and client on http://localhost:3000
 ```
 
+## App Info
+
+### Author
+
+Brad Traversy
+[Traversy Media](http://www.traversymedia.com)
 
 ### Version
 
@@ -31,4 +36,4 @@ npm run client
 
 ### License
 
-This project is licensed under NK-team
+This project is licensed under the MIT License
