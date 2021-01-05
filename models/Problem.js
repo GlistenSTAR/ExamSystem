@@ -16,6 +16,10 @@ const ProblemSchema = new Schema({
     type: Array,
     required: true
   },
+  examid: {
+    type:String,
+    required: true
+  },
   create_at: {
     type: Date,
     default: Date.now

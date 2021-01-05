@@ -27,9 +27,9 @@ router.post(
     if (!isValid) {
       return res.status(400).json(errors);
     }
-    ExamInfo.findOne(req.body)
+    // console.log(req.body);
+    ExamInfo.find(req.body)
       .then(profile => {
-        // console.log(profile);
         if (!profile) {
           errors.examid = 'There is no examID or incorrect password';
           return res.status(404).json(errors);

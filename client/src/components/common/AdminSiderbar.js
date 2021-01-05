@@ -9,7 +9,6 @@ export default () => {
         <Link to="/teacher" className="list-group-item list-group-item-action ">  <i className="fas fa-graduation-cap"/>{' '}Teacher Manager</Link>
         <Link to="/problemmgr" className="list-group-item list-group-item-action ">  <i className="far fa-edit"/>{' '}Problem Manager</Link>
         <Link to="/resultmgr" className="list-group-item list-group-item-action ">  <i className="far fa-sticky-note"/>{' '}Result Manager</Link>
-        <Link to="/exammgr" className="list-group-item list-group-item-action ">  <i className="far fa-sticky-note"/>{' '}Exam Manager</Link>
         </div>
     </div>
   );

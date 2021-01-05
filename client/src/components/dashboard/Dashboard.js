@@ -60,6 +60,7 @@ class Dashboard extends Component {
               <td>{num++}</td>
               <td>{problem.question}</td>
               <td>{problem.answer.join(',')}</td>
+              <td>{problem.examid}</td>
               <td><Moment format="YYYY-MM-DD HH:MM">{problem.create_at}</Moment></td>
               <td><button onClick={this.onDeleteClick.bind(this, problem._id)} className="btn"><i className="fas fa-trash-alt text-danger"/></button></td>
             </tr>
@@ -72,7 +73,7 @@ class Dashboard extends Component {
           <div>
             <div align="center">
               <p className="lead text-muted">Please make question.{'   '}
-              <Link className="btn btn-success ml-4" to={'/question'}>Make Question</Link></p>
+              <Link className="btn btn-success ml-4" to={'/newExam'}>Make Question</Link></p>
             </div>
             <div className="mt-4 mb-4">
               <h4>{user.name}'s Question List</h4>
@@ -82,6 +83,7 @@ class Dashboard extends Component {
                     <td>No</td>
                     <td width="60%">Question</td>
                     <td width="10%">Answer</td>
+                    <td>ExamID</td>
                     <td>Create_Date</td>
                     <td>Setting</td>
                   </tr>

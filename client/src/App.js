@@ -62,6 +62,7 @@ class App extends Component {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/admin" component={AdminLogin} />
+
               <Switch>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
               </Switch>
@@ -71,6 +72,12 @@ class App extends Component {
               <Switch>
                 <PrivateRoute exact path="/examination" component={Examination} />
               </Switch>
+              <Switch>
+                <PrivateRoute exact path="/newExam" component={AddExam}/>
+              </Switch>
+
+
+
               <Switch>
                 <AdminRoute exact path="/admindashboard" component={AdminDashboard}/>
               </Switch>
@@ -86,9 +93,7 @@ class App extends Component {
               <Switch>
                 <AdminRoute exact path="/exammgr" component={ExamManager}/>
               </Switch>
-              <Switch>
-                <AdminRoute exact path="/addExam" component={AddExam}/>
-              </Switch>
+              
               {/* <Route exact path="/admindashboard" component={AdminDashboard} /> */}
 
               <Route exact path="/not-found" component={NotFound} />

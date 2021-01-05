@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { saveProblem } from '../../actions/problemActions';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import TextFieldGroup from '../common/TextFieldGroup';
+import isEmpty from '../../validation/is-empty';
 
 
 class NewQuestion extends Component {
@@ -21,7 +22,13 @@ class NewQuestion extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-
+  componentDidMount(){
+    const { currentExamid } = this.props.problems;
+    if(isEmpty(currentExamid)){
+      this.props.history.push('/dashboard');
+    } 
+  }
+  
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
@@ -38,16 +45,16 @@ class NewQuestion extends Component {
     const newSolve = {
       name: this.props.auth.user.name,
       question: this.state.question,
-      answer: this.state.answer
+      answer: this.state.answer,
+      examid: this.props.problems.currentExamid.examid
     };
-
     this.props.saveProblem(newSolve, this.props.history);
   }
 
   render() {
     const { errors } = this.state;
     const { user } = this.props.auth;
-    
+    const { currentExamid } = this.props.problems;   
     return (
       <div className="question mb-5">
           <div className="row">
@@ -59,7 +66,7 @@ class NewQuestion extends Component {
               <form noValidate onSubmit={this.onSubmit}>
                 <div className="row mb-4">
                   <div className="col-md-8">
-                    <input className="form-control-lg" name="name" value={user.name+", "+user.role} disabled={true}/>
+                    <input className="form-control-lg" name="name" value={user.name+", "+user.role+"( "+currentExamid.examid+" )"} disabled={true}/>
                   </div>
                   <div className="col-md-4" align="right">
                     <input type="submit" className="btn btn-primary btn-lg"/>
@@ -94,12 +101,14 @@ class NewQuestion extends Component {
 NewQuestion.propTypes = {
   saveProblem: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
-  errors: PropTypes.object
+  errors: PropTypes.object,
+  problems: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
   auth: state.auth,
-  errors: state.errors
+  errors: state.errors,
+  problems: state.problems
 });
 
 export default connect(mapStateToProps, { saveProblem })(withRouter(NewQuestion));

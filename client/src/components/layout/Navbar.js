@@ -12,28 +12,28 @@ class Navbar extends Component {
 
   render() {
     const { isAuthenticated, user } = this.props.auth;
-    let contentnav;
-    if(user.role==="teacher"){
-      contentnav=(
-        <li className="nav-item">
-          <Link className="nav-link" to="/question">
-            Question
-          </Link>
-        </li>
-      )
-    } else {
-      contentnav = (<span></span>
-      // if you want to add navbar item write down here code (when enter the student)
-        // <li className="nav-item">
-        //   <Link className="nav-link" to="/examination">
-        //     Examination
-        //   </Link>
-        // </li>
-      )
-    }
+    // let contentnav;
+    // if(user.role==="teacher"){
+    //   contentnav=(
+    //     // <li className="nav-item">
+    //     //   <Link className="nav-link" to="/question">
+    //     //     Question
+    //     //   </Link>
+    //     // </li>
+    //   )
+    // } else {
+    //   contentnav = (<span></span>
+    //   // if you want to add navbar item write down here code (when enter the student)
+    //     // <li className="nav-item">
+    //     //   <Link className="nav-link" to="/examination">
+    //     //     Examination
+    //     //   </Link>
+    //     // </li>
+    //   )
+    // }
     const authLinks = (
       <ul className="navbar-nav ml-auto">
-        { contentnav }
+        {/* { contentnav } */}
         <li className="nav-item">
           <a
             href=""

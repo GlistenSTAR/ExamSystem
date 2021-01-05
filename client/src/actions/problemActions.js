@@ -50,12 +50,15 @@ export const deleteProblem = (id, history) => dispatch =>{
 
 //get exmination
 export const getExamination = () => dispatch => {
+  const data = { examid: localStorage.examid };
   axios
-    .get('/api/problem/getExamination')
-      .then(res => dispatch({
-        type:GET_EXAMINAIONS,
-        payload: res.data
-      }))
+    .post('/api/problem/getExamination', data)
+      .then(res=>
+        dispatch({
+          type: GET_EXAMINAIONS,
+          payload: res.data
+        })
+      )
       .catch(err => console.log(err));
 }
 

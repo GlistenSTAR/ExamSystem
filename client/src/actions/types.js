@@ -12,3 +12,4 @@ export const GET_EXAMINAIONS = 'GET_EXAMINAIONS';
 export const SET_ABLETST = 'SET_ABLETST';
 export const GET_ALL_RESULTS = 'GET_ALL_RESULTS';
 export const GET_ALL_EXAMS = 'GET_ALL_EXAMS';
+export const CURRENT_EXAMID = 'CURRENT_EXAMID';

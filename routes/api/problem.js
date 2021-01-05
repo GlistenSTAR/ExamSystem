@@ -25,6 +25,7 @@ router.post(
     const newProblem = {
       name: req.body.name,
       question: req.body.question,
+      examid: req.body.examid
     };
     newProblem.answer = req.body.answer.split(','); 
     new Problem(newProblem).save().then(problem => res.json(problem)).catch(err => console.log(err));;
@@ -55,14 +56,15 @@ router.delete(
   );
 
 //get exmination
-router.get(
+router.post(
   '/getExamination',
   passport.authenticate('jwt', { session: false }),
-  (req, res) =>{
-    Problem.find().then((data)=>{
-      res.json(data)
-    });
-  }
+    (req, res) =>{
+      let examd = {examid: req.body.examid};
+      Problem.find(examd).then((data)=>{
+        res.json(data)
+      });
+    }
 )
 
 module.exports = router;

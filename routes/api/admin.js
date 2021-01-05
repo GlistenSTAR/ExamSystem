@@ -136,8 +136,14 @@ router.post(
       password: req.body.password,
       examid: req.body.examid
     }
-    new ExamInfo(newExamInfo).save().then(newExam => res.json(newExam))
-      .catch(err => console.log(err));
+    ExamInfo.findOne(newExamInfo).then(result=>{
+      if(!result){
+        new ExamInfo(newExamInfo).save().then(newExam => res.json(newExam))
+        .catch(err => console.log(err));
+      } else {
+        res.json(result);
+      }
+    })
   }
 )
 

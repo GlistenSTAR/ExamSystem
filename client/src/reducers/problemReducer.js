@@ -1,13 +1,15 @@
 import {
   GET_PROBLEMS,
   POST_LOADING,
-  GET_EXAMINAIONS
+  GET_EXAMINAIONS,
+  CURRENT_EXAMID
 } from '../actions/types';
 
 const initialState = {
   problems: [],
   loading: false,
-  examination:[]
+  examination:[],
+  currentExamid:{}
 };
 
 export default function(state = initialState, action) {
@@ -26,6 +28,11 @@ export default function(state = initialState, action) {
     case GET_EXAMINAIONS:
       return {
         examination: action.payload
+      }
+    case CURRENT_EXAMID:
+      return{
+        ...state,
+        currentExamid: action.payload
       }
     default:
       return state;

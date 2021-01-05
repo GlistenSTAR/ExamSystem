@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_ERRORS, SET_CURRENT_ADMIN, GET_STUDENTS, GET_TEACHERS, GET_ALL_PROBLEMS,GET_ALL_RESULTS , GET_ALL_EXAMS } from './types';
+import { GET_ERRORS, SET_CURRENT_ADMIN, GET_STUDENTS, GET_TEACHERS, GET_ALL_PROBLEMS,GET_ALL_RESULTS , GET_ALL_EXAMS, CURRENT_EXAMID } from './types';
 
 
 // Login - Get admin Token
@@ -134,7 +134,11 @@ export const saveExamInfo = (data, history) => dispatch =>{
   axios
     .post('/api/admin/addExam', data)
     .then(res => {
-      history.push('/exammgr');
+      dispatch({
+      type: CURRENT_EXAMID,
+      payload: res.data
+    });
+      history.push('/question');
     })
     .catch(err =>
       dispatch({
